@@ -9,7 +9,7 @@ use cloudflare::{endpoints::dns::dns::{self, DnsRecord}, framework::{auth::Crede
 struct Args
 {
     #[arg(long)]
-    config_path: path::PathBuf,
+    config: path::PathBuf,
 
     #[arg(long)]
     generate: bool
