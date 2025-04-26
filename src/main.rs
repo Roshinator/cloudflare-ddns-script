@@ -1,7 +1,6 @@
 use std::{net::Ipv4Addr, net::Ipv6Addr, path};
 use clap::Parser;
 use serde::{Serialize, Deserialize};
-use reqwest::header;
 use cloudflare::{endpoints::dns::dns::{self, DnsRecord}, framework::{auth::Credentials, client as cf_client, Environment}};
 
 #[derive(Parser, Debug)]
@@ -37,11 +36,11 @@ fn main()
     let args = Args::parse();
     if args.generate
     {
-        generate_config(args.config_path);
+        generate_config(args.config);
     }
     else
     {
-        update_records(args.config_path);
+        update_records(args.config);
     }
     
 }
